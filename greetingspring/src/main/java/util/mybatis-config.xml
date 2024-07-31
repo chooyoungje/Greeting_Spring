@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC
+	"-//mybatis.org//DTD Config 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="model.Member" alias="member" />
+		<typeAlias type="model.Business" alias="business" />
+		<typeAlias type="model.Resume" alias="resume" />
+		<typeAlias type="model.Anno" alias="anno" />
+		<typeAlias type="model.Skill" alias="skill" />
+		<typeAlias type="model.Edu" alias="edu" />
+		<typeAlias type="model.Career" alias="career" />
+		<typeAlias type="model.MemberPortfolio"
+			alias="memberportfolio" />
+		<typeAlias type="model.MemberProject" alias="memberproject" />
+		<typeAlias type="model.Search" alias="search" />
+		<typeAlias type="model.Sort" alias="sort" />
+		<typeAlias type="model.ResumeAnnoConnection" alias="resumeAnnoConnection" />
+		<typeAlias type="model.Column" alias="column" />
+		<typeAlias type="model.Evaluate" alias="evaluate" />
+	</typeAliases>
+
+	<environments default="oracle">
+		<environment id="oracle">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="grt" />
+				<property name="password" value="1234" />
+
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper class="mapper.MemberMapper" />
+		<mapper class="mapper.BusinessMapper" />
+		<mapper class="mapper.AnnoMapper" />
+		<mapper class="mapper.ResumeMapper" />
+		<mapper class="mapper.CareerMapper" />
+		<mapper class="mapper.EduMapper" />
+		<mapper class="mapper.MemberPortfolioMapper" />
+		<mapper class="mapper.MemberProjectMapper" />
+		<mapper class="mapper.SkillMapper" />
+		<mapper class="mapper.Resume_Anno_ConnectMapper" />
+		<mapper class="mapper.ResumeEvaluateMapper" />
+	</mappers>
+</configuration>
